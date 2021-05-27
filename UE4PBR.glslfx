@@ -3,22 +3,6 @@
 <glslfx version="1.0.0" author="allegorithmic.com">
 
     <!-- TECHNIQUES -->
-    <technique name="Parallax Occlusion">
-        <!-- PROPERTIES -->
-        <property name="blend_enabled"     value="true"/>
-        <property name="blend_func"        value="src_alpha,one_minus_src_alpha"/>
-        <property name="cull_face_enabled" value="true"/>
-        <property name="cull_face_mode"    value="back"/>
-
-        <!-- SHADERS -->
-        <shader type="vertex"   filename="common/parallax/vs.glsl"/>
-        <shader type="fragment" filename="UE4Shading/fs.glsl"/>
-
-        <!-- UNIFORMS -->
-        <uniform name="parallax_mode" guiName="Parallax Mode"         min="0" max="0" />
-    </technique>
-
-
     <technique name="Tesselation">
         <!-- PROPERTIES -->
         <property name="blend_enabled"     value="true"/>
@@ -38,6 +22,22 @@
     </technique>
 
 
+    <technique name="Parallax Occlusion">
+        <!-- PROPERTIES -->
+        <property name="blend_enabled"     value="true"/>
+        <property name="blend_func"        value="src_alpha,one_minus_src_alpha"/>
+        <property name="cull_face_enabled" value="true"/>
+        <property name="cull_face_mode"    value="back"/>
+
+        <!-- SHADERS -->
+        <shader type="vertex"   filename="common/parallax/vs.glsl"/>
+        <shader type="fragment" filename="UE4Shading/fs.glsl"/>
+
+        <!-- UNIFORMS -->
+        <uniform name="parallax_mode" guiName="Parallax Mode"         min="0" max="0" />
+    </technique>
+	
+	
     <!-- INPUT VERTEX FORMAT -->
     <vertexformat name="iVS_Position" semantic="position"/>
     <vertexformat name="iVS_Normal"   semantic="normal"/>
@@ -93,7 +93,7 @@
     <!-- UNIFORMS -->
     <uniform name="EmissiveIntensity" guiGroup="Emissive"   guiName="Emissive Intensity"      default="1" min="0"  guiWidget="slider"  guiMin="0"  guiMax="20"/>
     <uniform name="sRGBBaseColor"     guiGroup="Base Color" guiName="sRGB Base Color Texture" default="true"       guiWidget="checkbox" />
-    <uniform name="heightMapScale"    guiGroup="Height"     guiName="Scale"                   default="0"          guiWidget="slider" guiMin="0"  guiMax="10" />
+    <uniform name="heightMapScale"    guiGroup="Height"     guiName="Scale"                   default="1"          guiWidget="slider" guiMin="0"  guiMax="10" />
     <uniform name="flipY"             guiGroup="Normal"     guiName="DirectX Normal"          default="true"       guiWidget="checkbox" semantic="isdirectxnormal"/>
     <uniform name="tiling"            guiGroup="Global"     guiName="Tiling"                  default="1" min="1"  guiWidget="slider"   guiMax="10"/>
     <uniform name="uvwScaleEnabled"   guiGroup="Global"     guiName="UV Scale Enabled"        default="false"      guiWidget="checkbox" />
